@@ -1,7 +1,7 @@
 HPX_Graph500
 ============
 
-Graph500 benchmark rewritten in C++ using HPX.
+Graph500 benchmark rewritten in C++ using HPX. Initial version is forked from [sithhell Graph500](https://github.com/sithhell/graph500).
 
 Introduction
 ============
