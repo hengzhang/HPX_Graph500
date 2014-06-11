@@ -5,9 +5,9 @@ Graph500 benchmark rewritten in C++ using HPX. Initial version is forked from [s
 
 Introduction
 ============
-[HPX](https://github.com/STEllAR-GROUP/hpx) is a general purpose C++ runtime system for parallel and distributed applications of any scale. The goal of HPX is to create a high quality, freely available, open source implementation of the ParalleX model for conventional systems
+[HPX](https://github.com/STEllAR-GROUP/hpx) is a general purpose C++ runtime system for parallel and distributed applications of any scale. The goal of HPX is to create a high quality, freely available, open source implementation of the ParalleX model for conventional systems.
 
-Graph500 is the benchmark used to model important factors of many modern parallel analytical workloads. The current Graph500 benchmarks are implemented using OpenMP and MPI. 
+Graph500 is the benchmark used to model important factors of many modern parallel analytical workloads. The current Graph500 benchmarks are implemented using OpenMP and MPI. See [`http://www.graph500.org/`](http://www.graph500.org/) for information on the present Graph500.
 
 Porting Graph500 to [HPX](https://github.com/STEllAR-GROUP/hpx), which is well suited for the fine-grain and irregular workloads of graph applications.
 
