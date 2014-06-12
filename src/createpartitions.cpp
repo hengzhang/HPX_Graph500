@@ -49,10 +49,10 @@ namespace graph500
             std::size_t num_components = get_num_partitions();
 
             typedef
-                std::vector<hpx::unique_future<hpx::naming::gid_type>>
+                std::vector<hpx::future<hpx::naming::gid_type>>
                 futures_type;
 
-            std::vector<hpx::unique_future<create_partitions_type>> components;
+            std::vector<hpx::future<create_partitions_type>> components;
             components.reserve(2);
 
             if(localities.size() > 1)
@@ -98,14 +98,14 @@ namespace graph500
             res.second.push_back(value_type(this_loc.get_gid(), type));
             res.second.back().gids_.clear();
             res.second.back().gids_.reserve(num_components);
-            BOOST_FOREACH(hpx::unique_future<hpx::naming::gid_type> & f, fs)
+            BOOST_FOREACH(hpx::future<hpx::naming::gid_type> & f, fs)
             {
                 res.second.back().gids_.push_back(f.get());
             }
 
             hpx::wait_all(components);
 
-            BOOST_FOREACH(hpx::unique_future<create_partitions_type> & f, components)
+            BOOST_FOREACH(hpx::future<create_partitions_type> & f, components)
             {
                 create_partitions_type r = f.get();
                 res.second.insert(res.second.end(), r.second.begin(), r.second.end());
@@ -124,7 +124,7 @@ namespace graph500
 
         hpx::id_type id = localities[0];
 
-        hpx::unique_future<detail::create_partitions_type> async_result
+        hpx::future<detail::create_partitions_type> async_result
             = hpx::async(action_type(), id, std::move(localities), type, opt);
 
         std::vector<hpx::id_type> components;
