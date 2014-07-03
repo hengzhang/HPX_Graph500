@@ -22,6 +22,7 @@ static int* g_outgoing_reqs_active;
 static boost::uint64_t* g_recvbuf;
 */
 
+//make this as a stub _ run bfs_custom
 namespace graph500{ namespace bfs{
 
 void find_bfs_roots(int* num_bfs_roots, const csr_graph* const g, const boost::uint64_t seed1, const uboost::uint64_t seed2, boost::uint64_t* const bfs_roots) {
