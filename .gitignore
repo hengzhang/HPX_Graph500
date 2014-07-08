@@ -3,6 +3,7 @@
 *.lo
 *.o
 *.obj
+*.c
 
 # Compiled Dynamic libraries
 *.so
@@ -19,3 +20,15 @@
 *.exe
 *.out
 *.app
+
+#Dir
+hpx_bfs_bak/
+
+#CMakeFiles
+*.cmake
+Makefile
+CMakeFiles/
+bin/
+CMakeCache.txt
+lib/
+

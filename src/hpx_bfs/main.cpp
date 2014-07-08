@@ -107,7 +107,7 @@ int hpx_main(boost::program_options::variables_map& vm){
     std::vector<hpx::lcos::future<void> > find_roots_phase;
     graph500::server::partition::find_bfs_roots  find_roots;
     for(std::size_t i =0; i<locality_num ; i++){
-      find_roots_phase.push_back(hpx::async(find_roots, locality_ids[i], &num_bfs_roots, &g, seed1,seed2, bfs_roots));
+      find_roots_phase.push_back(hpx::async(find_roots, locality_ids[i], &num_bfs_roots, &g, seed1,seed2, bfs_roots,locality_ids));
     }
     hpx::wait_all(find_roots_phase);
     //!]
@@ -121,7 +121,6 @@ int hpx_main(boost::program_options::variables_map& vm){
     int validation_passed = 1;
     double* bfs_times = (double*)malloc(num_bfs_roots * sizeof(double));
     double* validate_times = (double*)malloc(num_bfs_roots * sizeof(double));
-    //    int64_t* pred = (int64_t*)xMPI_Alloc_mem(g.nlocalverts * sizeof(int64_t));
     std::int64_t* pred = (std::int64_t *) malloc(g.nlocalverts *sizeof(std::int64_t));
 
     int bfs_root_idx;

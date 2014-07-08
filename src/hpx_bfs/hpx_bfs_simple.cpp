@@ -10,19 +10,6 @@
 #include <assert.h>
 
 
-/*static oned_csr_graph g;
-static boost::uint64_t* g_oldq;
-static boost::uint64_t* g_newq;
-static unsigned long* g_visited;
-static const int coalescing_size = 256;
-static boost::uint64_t* g_outgoing;
-static std::size_t* g_outgoing_counts 
-static MPI_Request* g_outgoing_reqs;
-static int* g_outgoing_reqs_active; 
-static boost::uint64_t* g_recvbuf;
-*/
-
-//make this as a stub _ run bfs_custom
 namespace graph500{ namespace bfs{
 
 void find_bfs_roots(int* num_bfs_roots, const csr_graph* const g, const boost::uint64_t seed1, const uboost::uint64_t seed2, boost::uint64_t* const bfs_roots) {

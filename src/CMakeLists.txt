@@ -70,3 +70,21 @@ add_hpx_executable(
 #     graph500_generator
 #  FOLDER "hpx_bfs"
 #)
+#add_hpx_executable(
+#  hpx_csr
+#  ESSENTIAL
+#  SOURCES 
+#     hpx_csr.cpp
+#     main.cpp
+#     utils.cpp
+#     convert_to_csr.cpp
+#     validate.cpp
+#     find_roots.cpp
+#  HEADERS
+#     common.hpp
+#  COMPILE_FLAGS
+#  LINK_FLAGS
+#  DEPENDENCIES
+#     graph500_generator
+#  FOLDER "hpx_bfs"
+#)

@@ -17,17 +17,14 @@ extern std::size_t rank , size;
 #define VERTEX_TO_GLOBAL(i) ((int64_t)((i)*size + rank))
 
 typedef struct csr_graph {
-  size_t nlocalverts;
-  size_t nlocaledges;
-  int64_t nglobalverts;
-  size_t *rowstarts;
-  int64_t *column;
+  std::size_t nlocalverts;//number of vertices stored on the local rank
+  std::size_t nlocaledges;//number of edges stored on the local rank
+  std::int64_t nglobalverts;//total number of vertices in the graph
+  std::size_t *rowstarts;
+  std::int64_t *column;
+  //zero-based compressed sparse row data structure for the local part of graph
 } csr_graph;
 
-void setup_globals(void); /* In utils.cpp */
+//void setup_globals(void); /* In utils.cpp */
 void free_csr_graph(csr_graph* const g); /* In utils.cpp */
-//void* xmalloc(size_t nbytes); /* In utils.cpp */
-//void* xcalloc(size_t n, size_t unit); /* In utils.cpp */
-//void* xrealloc(void* p, size_t nbytes); /* In utils.cpp */
-
 #endif
